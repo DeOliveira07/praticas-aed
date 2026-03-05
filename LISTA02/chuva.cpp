@@ -3,10 +3,6 @@
 
 using namespace std;
 
-// --------------------
-// Iterativa: escorre só para a ESQUERDA
-// (mantém: de cima; e da direita para a esquerda sobre prateleira)
-// --------------------
 void solucao_iterativa_esquerda(vector<vector<char>> &C) {
     bool change;
     int n = (int)C.size();
@@ -34,10 +30,7 @@ void solucao_iterativa_esquerda(vector<vector<char>> &C) {
     } while (change);
 }
 
-// --------------------
-// Recursiva: escorre só para a DIREITA
-// (mantém: de cima; e da esquerda para a direita sobre prateleira)
-// --------------------
+
 void chuva_direita(vector<vector<char>> &C, int i, int j) {
     int n = (int)C.size();
     int m = (int)C[0].size();
@@ -86,8 +79,7 @@ static void imprimir(const vector<vector<char>> &C) {
 }
 
 int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
+
 
     int n, m;
     cin >> n >> m;

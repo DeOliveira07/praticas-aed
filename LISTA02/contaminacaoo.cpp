@@ -4,14 +4,10 @@
 
 using namespace std;
 
-// --------------------
-// Iterativa (BFS): contamina a partir de TODOS os 'T'
-// --------------------
 void solucao_iterativa(vector<vector<char>> &C) {
     int n = (int)C.size();
     int m = (int)C[0].size();
 
-    // fila em arrays (sem struct/node)
     vector<int> qr(n * m), qc(n * m);
     int head = 0, tail = 0;
 
@@ -52,9 +48,6 @@ void solucao_iterativa(vector<vector<char>> &C) {
     }
 }
 
-// --------------------
-// Recursiva (DFS): contamina a partir de 1 célula (r,c) que é 'T'
-// --------------------
 void dfs_contamina(vector<vector<char>> &C, int r, int c) {
     int n = (int)C.size();
     int m = (int)C[0].size();
@@ -79,8 +72,7 @@ void solucao_recursiva(vector<vector<char>> &C) {
     int n = (int)C.size();
     int m = (int)C[0].size();
 
-    // para não ter problema ao ir transformando e "revisitar",
-    // basta disparar DFS a partir de cada 'T' original:
+
     vector<pair<int,int>> fontes;
     fontes.reserve(n * m);
 
@@ -95,7 +87,6 @@ void solucao_recursiva(vector<vector<char>> &C) {
     }
 }
 
-// --------------------
 static void imprimir(const vector<vector<char>> &C) {
     for (int i = 0; i < (int)C.size(); i++) {
         for (int j = 0; j < (int)C[i].size(); j++) {
@@ -106,8 +97,7 @@ static void imprimir(const vector<vector<char>> &C) {
 }
 
 int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
+
 
     int n, m;
     while (cin >> n >> m) {
@@ -120,15 +110,11 @@ int main() {
             }
         }
 
-        // Escolha qual rodar:
-        // 1) Iterativa:
         // solucao_iterativa(C);
-
-        // 2) Recursiva:
         solucao_recursiva(C);
 
         imprimir(C);
-        cout << "\n"; // linha em branco após cada mapa
+        cout << "\n"; 
     }
 
     return 0;

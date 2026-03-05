@@ -23,7 +23,7 @@ void rotate(vector<int> &arr, int n) {
 arr=auxiliar;
 }
 int main() {
- vector<int> arr1 = {1, 2, 3, 4, 5, 6, 7, 8};
+ vector<int> arr1 = {0,0,0,0};
  vector<int> arr2 = {8, 7, 6, 5, 4, 3, 2, 1};
  vector<int> arr3 = {3, 5, 8, 10, 1, 7, 9, 4};
  rotate(arr1, 2);
